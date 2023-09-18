@@ -1,30 +1,27 @@
 #!/usr/bin/python3
-"""
+"""This module  print '#' times the square of a number.
 
-This module is composed by a function that prints a square with the character #
-
+The module has the function print_square.
 """
 
 
 def print_square(size):
-    """ Function that prints a square with the character #
+    """Function print_square.
+
+    This function prints the char '#' as many times as
+    the square of the given number.
 
     Args:
-        size: size of the square printed
+        size (int): To stablish the size of the square.
 
     Returns:
         No return
 
-    Raises:
-        TypeError: If size is not an integer number
-
-
     """
-
-    if not isinstance(size, int):
+    if (type(size) != int or size is None):
         raise TypeError("size must be an integer")
-    if size < 0:
+    elif (size < 0):
         raise ValueError("size must be >= 0")
-
-    for i in range(size):
-        print("#" * size)
+    else:
+        a = (size * "#") + "\n"
+        print(size * a, end="")
